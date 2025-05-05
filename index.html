@@ -1,0 +1,1353 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Daraz Clone
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: "Inter", sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-white">
+  <!-- Top Navbar -->
+  <nav class="bg-[#FF5400] text-white text-xs font-normal flex justify-end items-center gap-6 px-4 sm:px-6 md:px-10 py-2">
+   <a class="hover:underline" href="#">
+    SAVE MORE ON APP
+   </a>
+   <a class="hover:underline" href="#">
+    SELL ON DARAZ
+   </a>
+   <a class="hover:underline" href="#">
+    HELP &amp; SUPPORT
+   </a>
+   <a class="hover:underline" href="#">
+    LOGIN
+   </a>
+   <a class="hover:underline" href="#">
+    SIGN UP
+   </a>
+   <a class="hover:underline" href="#">
+    زبان تبدیل کریں
+   </a>
+  </nav>
+  <!-- Main Header -->
+  <header class="bg-[#FF5400] flex flex-col md:flex-row items-center md:items-center justify-between px-4 sm:px-6 md:px-20 py-4 gap-4 md:gap-0">
+   <!-- Logo -->
+   <div class="flex-shrink-0">
+    <img alt="Daraz logo in white" class="h-10 w-auto" src="data:image/png;base64,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"/>
+   </div>
+   <!-- Search bar -->
+   <form class="flex flex-grow max-w-4xl">
+    <input class="flex-grow rounded-l-md px-4 py-2 text-gray-500 placeholder-gray-400 focus:outline-none" placeholder="Search in Daraz" type="text"/>
+    <button aria-label="Search" class="bg-[#FF5400] border border-[#FF5400] rounded-r-md px-4 flex items-center justify-center text-[#FF5400]" type="submit">
+     <svg class="h-5 w-5 text-[#FF5400]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" stroke-linecap="round" stroke-linejoin="round">
+      </path>
+     </svg>
+    </button>
+   </form>
+   <!-- Cart icon -->
+   <button aria-label="Cart" class="text-white text-2xl ml-4 flex-shrink-0">
+    <i class="fas fa-shopping-cart">
+    </i>
+   </button>
+  </header>
+  <!-- Main Content -->
+  <main class="flex flex-col md:flex-row max-w-[1440px] mx-auto mt-4 px-4 sm:px-6 md:px-10 gap-4">
+   <!-- Left slider area -->
+   <section class="flex-grow max-w-[1100px]">
+    <div class="relative w-full overflow-hidden rounded-md">
+     <img alt="Blue background with yellow text MUST BUY, shop our top selling products, Nestle EveryDay coffee pack, Medlay shampoo bottles, and white wireless earbuds on teal podiums" class="w-full h-auto rounded-md" height="400" src="https://img.lazcdn.com/us/domino/5fa848a7-28cc-49a1-ba40-57eeb28bf5cf_PK-1976-688.jpg_2200x2200q80.jpg_.webp" width="1100"/>
+     <button class="absolute bottom-6 left-6 bg-white text-[#FF5400] text-sm font-semibold rounded-full px-5 py-2 hover:bg-[#FF5400] hover:text-white transition">
+      Shop Now
+     </button>
+    </div>
+    <div class="flex justify-center mt-3 space-x-2">
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-white">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+     <span class="w-3 h-3 rounded-full bg-gray-400">
+     </span>
+    </div>
+   </section>
+   <!-- Right app promo -->
+   <aside class="w-[280px] bg-gradient-to-b from-[#FFE3D9] to-[#FFD9E0] rounded-md p-4 flex flex-col gap-4">
+    <div class="flex items-center gap-2">
+     <img alt="Daraz logo in orange" class="h-8 w-auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH8rEdqPW21t-se_p3-7MxJwzHbqQqpveNdw&s"/>
+     <h2 class="text-sm font-semibold text-[#4A1F0A]">
+      TRY DARAZ APP
+     </h2>
+    </div>
+    <div class="bg-gradient-to-b from-[#FF7A00] to-[#FF3E8D] rounded-lg p-4 text-white text-sm font-semibold">
+     <div class="flex justify-between items-center mb-3">
+      <span class="bg-[#FF9A00] rounded-tl-md rounded-br-md px-2 py-1 text-xs flex items-center gap-1">
+       <i class="fas fa-star text-yellow-300">
+       </i>
+       4.8 Rated
+      </span>
+      <span>
+       Download the App now
+      </span>
+     </div>
+     <div class="flex flex-col gap-3">
+      <div class="flex items-center gap-3">
+       <div class="bg-[#3DDCDC] rounded-full p-2 flex items-center justify-center">
+        <i class="fas fa-truck text-white text-lg">
+        </i>
+       </div>
+       <span>
+        Free Shipping
+       </span>
+      </div>
+      <div class="flex items-center gap-3">
+       <div class="bg-[#FF6B7B] rounded-full p-2 flex items-center justify-center">
+        <i class="fas fa-percent text-white text-lg">
+        </i>
+       </div>
+       <span>
+        Exclusive Vouchers
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="flex flex-col items-center gap-2">
+     <img alt="QR code for Daraz app download" class="w-28 h-28 object-contain" height="120" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH8rEdqPW21t-se_p3-7MxJwzHbqQqpveNdw&s" width="120"/>
+     <div class="flex gap-2 w-full justify-center">
+      <button class="flex items-center gap-2 border border-gray-300 rounded-md px-3 py-1 text-sm text-gray-700 hover:bg-gray-100">
+       <img alt="Apple logo" class="w-4 h-4 object-contain" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"/>
+       App Store
+      </button>
+      <button class="flex items-center gap-2 border border-gray-300 rounded-md px-3 py-1 text-sm text-gray-700 hover:bg-gray-100">
+       <img alt="Google Play logo" class="w-5 h-5 object-contain" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"/>
+       Google Play
+      </button>
+     </div>
+     <p class="text-xs text-gray-700">
+      Download the App Now!
+     </p>
+    </div>
+   </aside>
+  </main>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    .font-anton {
+      font-family: 'Anton', sans-serif;
+    }
+  </style>
+ <body class="bg-white flex justify-center items-center min-h-screen p-4">
+  <div class="relative w-full max-w-[1100px] h-[120px] rounded-[80px] overflow-visible" style="background: linear-gradient(90deg, #4a005a 0%, #5a006a 100%)">
+   <div class="absolute left-[-60px] top-1/2 -translate-y-1/2 w-[120px] h-[120px] rounded-[80px] bg-gradient-to-b from-[#4a005a] to-[#5a006a]">
+   </div>
+   <div class="absolute right-[-60px] top-1/2 -translate-y-1/2 w-[120px] h-[120px] rounded-[80px] bg-gradient-to-b from-[#4a005a] to-[#5a006a]">
+   </div>
+   <div class="flex items-center h-full px-6 space-x-6 relative z-10">
+    <!-- Left text block -->
+    <div class="flex items-center space-x-3">
+     <span class="font-anton text-[72px] leading-none text-white drop-shadow-[2px_2px_2px_rgba(0,0,0,0.7)]">
+      5.5
+     </span>
+     <div class="flex flex-col space-y-1">
+      <span class="text-[20px] font-extrabold text-white bg-[#ff6600] px-3 py-1 rounded-sm drop-shadow-[2px_2px_2px_rgba(0,0,0,0.7)]">
+       BEST PRICE
+      </span>
+      <span class="text-[28px] font-extrabold text-white drop-shadow-[2px_2px_2px_rgba(0,0,0,0.7)]">
+       BEST DEALS
+      </span>
+     </div>
+    </div>
+    <!-- Middle product images -->
+    <div class="flex items-center space-x-3">
+     <img alt="Light blue smartphone front view with triple camera" class="h-[120px] w-auto object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/2b5ee009-ed73-4ad2-0ead-318092633d8b.jpg" width="80"/>
+     <img alt="Dark blue wireless earbuds case with earbuds" class="h-[120px] w-auto object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/50b2ea6b-6d47-4f71-794e-d7a7d4539121.jpg" width="80"/>
+     <img alt="Red and white Revitalift cream jar and tube" class="h-[120px] w-auto object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/52bbd922-3356-4165-6c48-ac34a95358be.jpg" width="80"/>
+     <img alt="Colorful abstract art with red, yellow, blue, and purple swirls" class="h-[120px] w-auto object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/9159856f-a529-4e8a-b9a2-1a5ed1358015.jpg" width="120"/>
+     <div class="relative">
+      <img alt="Black and white handbag with handles" class="h-[120px] w-auto object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/c6508aab-aee2-40da-df05-f115197cbac7.jpg" width="120"/>
+      <img alt="Black and white sneaker with white stripes" class="absolute bottom-0 left-1/2 -translate-x-1/2 h-[80px] w-auto object-contain" height="120" src="https://storage.googleapis.com/a1aa/image/5a60fb1b-f83f-4741-06b1-ad3b8e32ade9.jpg" width="120"/>
+      <div class="absolute top-1 left-1 bg-yellow-400 text-black text-[12px] font-bold px-2 rounded-[10px] rotate-[10deg] shadow-md">
+       5-9 MAY
+      </div>
+     </div>
+    </div>
+    <!-- Right text block -->
+    <div class="ml-auto flex items-center space-x-6">
+     <div class="text-right text-white font-extrabold leading-tight drop-shadow-[2px_2px_2px_rgba(0,0,0,0.7)]">
+      <p class="text-[28px]">
+       UPTO
+      </p>
+      <p class="text-[48px]">
+       60% OFF
+      </p>
+     </div>
+     <button class="w-[90px] h-[90px] rounded-full bg-gradient-to-b from-pink-400 to-pink-600 text-white font-extrabold text-[20px] drop-shadow-lg flex items-center justify-center">
+      SHOP
+      <br/>
+      NOW
+     </button>
+    </div>
+   </div>
+  </div>
+ 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   /* Custom font family to match the screenshot's font style */
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-[#faf9f7]">
+  <div class="max-w-full mx-auto p-4">
+   <h2 class="text-gray-700 text-2xl font-normal mb-2">
+    Flash Sale
+   </h2>
+   <div class="border border-t-0 border-gray-300 bg-white rounded-t">
+    <div class="flex justify-between items-center px-4 py-2 border-b border-gray-300">
+     <span class="text-orange-600 font-semibold text-sm">
+      On Sale Now
+     </span>
+     <button class="text-orange-600 font-semibold text-sm border border-orange-600 rounded px-4 py-2 hover:bg-orange-50 transition" type="button">
+      SHOP ALL PRODUCTS
+     </button>
+    </div>
+    <div class="flex overflow-x-auto no-scrollbar">
+     <!-- Product 1 -->
+     <div class="flex-shrink-0 w-40 p-2">
+      <img alt="Blue pack of Nestle Everyday Original Tea Whitener Powder 560g with cup of tea image" class="w-full h-auto object-contain" height="160" src="https://storage.googleapis.com/a1aa/image/c95e920d-f07c-4418-3479-b5cccbc0121a.jpg" width="160"/>
+      <p class="text-black text-sm mt-1 leading-tight">
+       Tea Whitener - NESTLE EVERYDAY Powder 560g...
+      </p>
+      <p class="text-orange-600 font-semibold text-base mt-1">
+       Rs.1,062
+      </p>
+      <p class="text-gray-400 text-xs line-through">
+       Rs.1,130
+      </p>
+      <p class="text-black text-xs font-semibold">
+       -6%
+      </p>
+     </div>
+     <!-- Product 2 -->
+     <div class="flex-shrink-0 w-40 p-2">
+      <img alt="Green Silk Beauty Soap Natural Olive 130g with soap bar and packaging" class="w-full h-auto object-contain" height="160" src="https://storage.googleapis.com/a1aa/image/a21bf2bf-5e5d-4bf4-1859-7509c9584c79.jpg" width="160"/>
+      <p class="text-black text-sm mt-1 leading-tight">
+       Silk Beauty Soap Natural Olive 130g – Nourishing...
+      </p>
+      <p class="text-orange-600 font-semibold text-base mt-1">
+       Rs.80
+      </p>
+      <p class="text-gray-400 text-xs line-through">
+       Rs.155
+      </p>
+      <p class="text-black text-xs font-semibold">
+       -48%
+      </p>
+     </div>
+     <!-- Product 3 -->
+     <div class="flex-shrink-0 w-40 p-2">
+      <img alt="Modern Digital Printed Wall Clock 12x24 inch mounted on peach wall above beige chair" class="w-full h-auto object-contain" height="160" src="https://storage.googleapis.com/a1aa/image/693b8017-d198-4b25-65a6-0b5b9b27ad0a.jpg" width="160"/>
+      <p class="text-black text-sm mt-1 leading-tight">
+       Modern Digital Printed Wall Clock 12x24 inch...
+      </p>
+      <p class="text-orange-600 font-semibold text-base mt-1">
+       Rs.1,178
+      </p>
+      <p class="text-gray-400 text-xs line-through">
+       Rs.3,500
+      </p>
+      <p class="text-black text-xs font-semibold">
+       -66%
+      </p>
+     </div>
+     <!-- Product 4 -->
+     <div class="flex-shrink-0 w-40 p-2">
+      <img alt="Pack of 8 Knorr Noodles Chatpatta 50G saver pack with 8 red and green noodle packets" class="w-full h-auto object-contain" height="160" src="https://storage.googleapis.com/a1aa/image/d93f1c93-fe2a-447b-8697-78e4163042f0.jpg" width="160"/>
+      <p class="text-black text-sm mt-1 leading-tight">
+       Pack of 8 Knorr Noodles Chatpatta - 50G
+      </p>
+      <p class="text-orange-600 font-semibold text-base mt-1">
+       Rs.363
+      </p>
+      <p class="text-gray-400 text-xs line-through">
+       Rs.400
+      </p>
+      <p class="text-black text-xs font-semibold">
+       -9%
+      </p>
+     </div>
+     <!-- Product 5 -->
+     <div class="flex-shrink-0 w-40 p-2">
+      <img alt="VOOXE 4-in-1 65W Fast Charging Magnetic cable with USB and Type-C ports" class="w-full h-auto object-contain" height="160" src="https://storage.googleapis.com/a1aa/image/5694c78e-9de7-44d3-20a4-aff33ed5a4bf.jpg" width="160"/>
+      <p class="text-black text-sm mt-1 leading-tight">
+       VOOXE 4-in-1 65W Fast Charging Magnetic...
+      </p>
+      <p class="text-orange-600 font-semibold text-base mt-1">
+       Rs.203
+      </p>
+      <p class="text-gray-400 text-xs line-through">
+       Rs.1,500
+      </p>
+      <p class="text-black text-xs font-semibold">
+       -86%
+      </p>
+     </div>
+     <!-- Product 6 -->
+     <div class="flex-shrink-0 w-40 p-2">
+      <img alt="Double Side Beard Shaper Plus Comb For Line Up with beard styles and comb design" class="w-full h-auto object-contain" height="160" src="https://storage.googleapis.com/a1aa/image/25da2f62-a45d-45c7-8cd2-f06c3562123c.jpg" width="160"/>
+      <p class="text-black text-sm mt-1 leading-tight">
+       Double Side Beard Shaper Plus Comb For Line Up
+      </p>
+      <p class="text-orange-600 font-semibold text-base mt-1">
+       Rs.84
+      </p>
+      <p class="text-gray-400 text-xs line-through">
+       Rs.199
+      </p>
+      <p class="text-black text-xs font-semibold">
+       -58%
+      </p>
+     </div>
+    </div>
+   </div>
+  </div>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    </head>
+    <body class="bg-white text-gray-800 font-sans">
+     <div class="max-w-full">
+      <h2 class="text-2xl font-normal p-4 border-b border-gray-200">
+       Categories
+       <fieldset>
+      </h2>
+      <div class="grid grid-cols-4 sm:grid-cols-8 border-t border-l border-gray-200">
+       <div class="border-r border-b border-gray-200 bg-white shadow-sm flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Mattress protector with water splash on it" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/c1404019-c5ab-45aa-22e4-d3562da898c8.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Mattress
+         <br/>
+         Protectors
+        </p>
+       </div>
+       <div class="border-r border-b border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Orange 3D printer filament coil" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/af079094-501d-4a57-5c16-1023668fb044.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         3D Printers
+        </p>
+       </div>
+       <div class="border-r border-b border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Wooden cutting board with bread roll and wheat" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/45467bd6-62bc-4529-fd26-e2734fb778b3.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Pasta, Noodle &amp;
+         <br/>
+         Pizza Tools
+        </p>
+       </div>
+       <div class="border-r border-b border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="SIM card tools for Samsung S10 S10+" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/abd0ef74-a31a-4ebd-0f11-85383787eb0e.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         SIM Tools
+        </p>
+       </div>
+       <div class="border-r border-b border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Phone with screen protector advertisement" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/d5e49fab-3f7a-480d-aae9-a788e896a589.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Screen Protectors
+        </p>
+       </div>
+       <div class="border-r border-b border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Man with colorful casserole pots" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/49846bbf-6a11-4d86-4467-d509fe7675fa.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Casserole Pots
+        </p>
+       </div>
+       <div class="border-r border-b border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="White hoodie with red text 'HOOK ON YOU'" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/444a7424-8f72-404c-98ac-2a41cfd5e6d7.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Hoodies &amp;
+         <br/>
+         Sweatshirts
+        </p>
+       </div>
+       <div class="border-r border-b border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Colorful toy boxes and organisers on shelves" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/5ed9ebd5-e9b2-4200-14d7-230958609f15.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Toy Boxes &amp;
+         <br/>
+         Organisers
+        </p>
+       </div>
+       <div class="border-r border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Person wearing colorful socks" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/d1f1c319-db9a-437a-2584-b484c84a17e7.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Footwear
+        </p>
+       </div>
+       <div class="border-r border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Dog and cat electric clippers with product packaging" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/e96f5a95-a8f6-47ed-3ff9-6648686f8600.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Dog &amp; Cat Electric
+         <br/>
+         Clippers
+        </p>
+       </div>
+       <div class="border-r border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Bathroom tapware parts and fittings" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/0ac2d810-1544-4ff6-846f-3299759496c9.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Bathroom Tapware
+        </p>
+       </div>
+       <div class="border-r border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Hats and caps with crown logos" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/3f9c5e22-a589-436c-8b9d-a5825054e546.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Hats &amp; Caps
+        </p>
+       </div>
+       <div class="border-r border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Dining sets with plates and bowls" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/dbda56a1-b4ea-4714-8b80-e6eb63d116c6.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Dining Sets
+        </p>
+       </div>
+       <div class="border-r border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Black microphone mounts" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/25cbf857-a89a-4066-ea0a-fa588800384a.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Microphones
+        </p>
+       </div>
+       <div class="border-r border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Colorful leashes and harnesses" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/2cd93247-ccda-481f-c096-c52a293fff88.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Leashes &amp;
+         <br/>
+         Harnesses
+        </p>
+       </div>
+       <div class="border-r border-gray-200 flex flex-col items-center p-4 cursor-pointer">
+        <img alt="Green mop or scooter handle" class="mb-2" height="100" src="https://storage.googleapis.com/a1aa/image/f105d1cd-a3f7-4ce3-cb55-38ca022b553a.jpg" width="100"/>
+        <p class="text-center text-sm leading-tight">
+         Scooters
+        </p>
+    </fieldset>
+       </div>
+      </div>
+     </div>
+         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+         <style>
+          /* Custom line clamp for 2 lines with ellipsis */
+           .line-clamp-2 {
+             display: -webkit-box;
+             -webkit-line-clamp: 2;
+             -webkit-box-orient: vertical;
+             overflow: hidden;
+           }
+         </style>
+        </head>
+        <body class="bg-white font-sans">
+         <div class="max-w-full px-2 sm:px-4 md:px-6 lg:px-8 py-4">
+          <h2 class="text-gray-800 text-xl font-normal mb-2">
+           Just For You
+          </h2>
+          <div class="flex space-x-2 overflow-x-auto scrollbar-hide">
+           <!-- Item 1 -->
+           <div class="flex-shrink-0 w-40 sm:w-44 md:w-48 lg:w-52">
+            <img alt="Black and white smiley printed summer tracksuit hanging on black grid wall" class="w-full h-auto object-cover" height="192" src="https://storage.googleapis.com/a1aa/image/95e16490-a7ac-4d7a-381d-5ccbb6ecc042.jpg" width="192"/>
+            <p class="text-black text-sm font-normal mt-1 line-clamp-2">
+             Black &amp; white smiley printed summer tracksui...
+            </p>
+            <div class="flex items-center space-x-1 mt-0.5">
+             <span class="text-orange-600 font-semibold text-base">
+              Rs.717
+             </span>
+             <span class="text-gray-500 text-xs font-normal">
+              -57%
+             </span>
+            </div>
+            <div class="flex items-center space-x-1 mt-0.5 text-yellow-400 text-xs font-semibold">
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star-half-alt">
+             </i>
+             <span class="text-gray-400 font-normal">
+              (23)
+             </span>
+            </div>
+           </div>
+           <!-- Item 2 -->
+           <div class="flex-shrink-0 w-40 sm:w-44 md:w-48 lg:w-52">
+            <img alt="Original TWS Airpods with Super Sound and High Quality box and earbuds on wooden table" class="w-full h-auto object-cover" height="192" src="https://storage.googleapis.com/a1aa/image/b6164754-583f-4dca-8592-5a47609f81bd.jpg" width="192"/>
+            <p class="text-black text-sm font-normal mt-1 line-clamp-2">
+             Orignal TWS Airpods with Super Sound &amp; High...
+            </p>
+            <div class="flex items-center space-x-1 mt-0.5">
+             <span class="text-orange-600 font-semibold text-base">
+              Rs.799
+             </span>
+             <span class="text-gray-500 text-xs font-normal">
+              -77%
+             </span>
+            </div>
+            <div class="flex items-center space-x-1 mt-0.5 text-yellow-400 text-xs font-semibold">
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star-half-alt">
+             </i>
+             <span class="text-gray-400 font-normal">
+              (3015)
+             </span>
+            </div>
+           </div>
+           <!-- Item 3 -->
+           <div class="flex-shrink-0 w-40 sm:w-44 md:w-48 lg:w-52">
+            <img alt="Pro White TWS Airpods Sound and High Quality with charging case and icons for features" class="w-full h-auto object-cover" height="192" src="https://storage.googleapis.com/a1aa/image/5e370b01-4d1c-4096-a2e4-cfa9d3510f97.jpg" width="192"/>
+            <p class="text-black text-sm font-normal mt-1 line-clamp-2">
+             Pro White TWS Airpods Sound &amp; High Quality...
+            </p>
+            <div class="flex items-center space-x-1 mt-0.5">
+             <span class="text-orange-600 font-semibold text-base">
+              Rs.810
+             </span>
+             <span class="text-gray-500 text-xs font-normal">
+              -73%
+             </span>
+            </div>
+            <div class="flex items-center space-x-1 mt-0.5 text-yellow-400 text-xs font-semibold">
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star-half-alt">
+             </i>
+             <span class="text-gray-400 font-normal">
+              (505)
+             </span>
+            </div>
+           </div>
+           <!-- Item 4 -->
+           <div class="flex-shrink-0 w-40 sm:w-44 md:w-48 lg:w-52">
+            <img alt="New Mini Rechargeable Portable Fan For School with penguins and leaves blowing" class="w-full h-auto object-cover" height="192" src="https://storage.googleapis.com/a1aa/image/53c73d6e-0243-4e88-4883-feb4ae2a50e4.jpg" width="192"/>
+            <p class="text-black text-sm font-normal mt-1 line-clamp-2">
+             New Mini Rechargeable Portable Fan For School...
+            </p>
+            <div class="flex items-center space-x-1 mt-0.5">
+             <span class="text-orange-600 font-semibold text-base">
+              Rs.529
+             </span>
+             <span class="text-gray-500 text-xs font-normal">
+             </span>
+            </div>
+            <div class="flex items-center space-x-1 mt-0.5 text-yellow-400 text-xs font-semibold">
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star-half-alt">
+             </i>
+             <span class="text-gray-400 font-normal">
+              (72)
+             </span>
+            </div>
+           </div>
+           <!-- Item 5 -->
+           <div class="flex-shrink-0 w-40 sm:w-44 md:w-48 lg:w-52">
+            <img alt="Garena Free Fire 13 Diamonds Fast Delivery black and yellow box with blue diamonds" class="w-full h-auto object-cover" height="192" src="https://storage.googleapis.com/a1aa/image/829046bf-4b42-4acf-4a29-4adc0a2f63f2.jpg" width="192"/>
+            <p class="text-black text-sm font-normal mt-1 line-clamp-2">
+             Garena Free Fire 13 Diamonds Fast Delivery...
+            </p>
+            <div class="flex items-center space-x-1 mt-0.5">
+             <span class="text-orange-600 font-semibold text-base">
+              Rs.41
+             </span>
+             <span class="text-gray-500 text-xs font-normal">
+              -9%
+             </span>
+            </div>
+            <div class="flex items-center space-x-1 mt-0.5 text-yellow-400 text-xs font-semibold">
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star-half-alt">
+             </i>
+             <span class="text-gray-400 font-normal">
+              (42)
+             </span>
+            </div>
+           </div>
+           <!-- Item 6 -->
+           <div class="flex-shrink-0 w-40 sm:w-44 md:w-48 lg:w-52">
+            <img alt="100 pcs Transparent White Nail Tips in blue box with hand showing nails" class="w-full h-auto object-cover" height="192" src="https://storage.googleapis.com/a1aa/image/8b6d9b66-7aa6-453a-c554-97aaf296c0c5.jpg" width="192"/>
+            <p class="text-black text-sm font-normal mt-1 line-clamp-2">
+             100 pcs Transparent/White...
+            </p>
+            <div class="flex items-center space-x-1 mt-0.5">
+             <span class="text-orange-600 font-semibold text-base">
+              Rs.98
+             </span>
+             <span class="text-gray-500 text-xs font-normal">
+              -67%
+             </span>
+            </div>
+            <div class="flex items-center space-x-1 mt-0.5 text-yellow-400 text-xs font-semibold">
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <i class="fas fa-star">
+             </i>
+             <span class="text-gray-400 font-normal">
+              (1958)
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+         
+             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+             <style>
+              /* Custom star rating color */
+               .star-yellow {
+                 color: #fbbf24;
+               }
+             </style>
+            </head>
+            <body class="bg-[#f8f8f8] p-4">
+             <div class="max-w-full flex gap-4 overflow-x-auto scrollbar-hide">
+              <!-- Card 1 -->
+              <div class="bg-white w-48 flex-shrink-0">
+               <img alt="Black men ring matt black titanium stainless steel on black textured surface" class="w-full" height="240" src="https://storage.googleapis.com/a1aa/image/03047f31-ca3f-4def-788e-6c818807ec42.jpg" width="240"/>
+               <div class="p-2">
+                <p class="text-sm leading-tight">
+                 Original men ring matt black titanium stainless...
+                </p>
+                <div class="flex items-center gap-2 mt-1">
+                 <span class="text-orange-500 font-semibold text-lg">
+                  Rs.82
+                 </span>
+                 <span class="text-gray-500 text-xs">
+                  -45%
+                 </span>
+                </div>
+                <div class="flex items-center gap-1 mt-1 text-yellow-400 text-xs">
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star-half-alt star-yellow">
+                 </i>
+                 <i class="far fa-star star-yellow">
+                 </i>
+                 <span class="text-gray-400 text-xs">
+                  (64)
+                 </span>
+                </div>
+               </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="bg-white w-48 flex-shrink-0">
+               <img alt="New trending black sandals for men on wooden floor" class="w-full" height="240" src="https://storage.googleapis.com/a1aa/image/3289231d-027d-4a5c-6431-c0f227a061b5.jpg" width="240"/>
+               <div class="p-2">
+                <p class="text-sm leading-tight">
+                 New trending sandals for men / Sandal for men /...
+                </p>
+                <div class="flex items-center gap-2 mt-1">
+                 <span class="text-orange-500 font-semibold text-lg">
+                  Rs.362
+                 </span>
+                 <span class="text-gray-500 text-xs">
+                  -79%
+                 </span>
+                </div>
+                <div class="flex items-center gap-1 mt-1 text-yellow-400 text-xs">
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <span class="text-gray-400 text-xs">
+                  (72)
+                 </span>
+                </div>
+               </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="bg-white w-48 flex-shrink-0">
+               <img alt="Blue M10 A6s F2 earbuds headphones with text Ultra-long Standby Time" class="w-full" height="240" src="https://storage.googleapis.com/a1aa/image/2d18df4f-6698-4587-8d78-485acc80f45d.jpg" width="240"/>
+               <div class="p-2">
+                <p class="text-sm leading-tight">
+                 M10 , A6s , F2 earbuds Headphones,Handfree,E...
+                </p>
+                <div class="flex items-center gap-2 mt-1">
+                 <span class="text-orange-500 font-semibold text-lg">
+                  Rs.360
+                 </span>
+                 <span class="text-gray-500 text-xs">
+                  -10%
+                 </span>
+                </div>
+                <div class="flex items-center gap-1 mt-1 text-yellow-400 text-xs">
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star-half-alt star-yellow">
+                 </i>
+                 <span class="text-gray-400 text-xs">
+                  (431)
+                 </span>
+                </div>
+               </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="bg-white w-48 flex-shrink-0">
+               <img alt="Golden TRIMUX PROFESSIONAL T9 DRAGON STYLE hair trimmer with accessories" class="w-full" height="240" src="https://storage.googleapis.com/a1aa/image/8a92a3b3-e619-46d9-be23-8824343bf448.jpg" width="240"/>
+               <div class="p-2">
+                <p class="text-sm leading-tight">
+                 TRIMUX PROFESSIONAL T9 DRAGON STYLE...
+                </p>
+                <div class="flex items-center gap-2 mt-1">
+                 <span class="text-orange-500 font-semibold text-lg">
+                  Rs.871
+                 </span>
+                 <span class="text-gray-500 text-xs">
+                  -56%
+                 </span>
+                </div>
+                <div class="flex items-center gap-1 mt-1 text-yellow-400 text-xs">
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star-half-alt star-yellow">
+                 </i>
+                 <span class="text-gray-400 text-xs">
+                  (711)
+                 </span>
+                </div>
+               </div>
+              </div>
+              <!-- Card 5 -->
+              <div class="bg-white w-48 flex-shrink-0">
+               <img alt="Red T-shirt And Short Pants For Kids Baby Boys And Monkey Print" class="w-full" height="240" src="https://storage.googleapis.com/a1aa/image/4db9bfa7-c51b-49a7-38c7-d41920bef48f.jpg" width="240"/>
+               <div class="p-2">
+                <p class="text-sm leading-tight">
+                 T-shirt And Short Pants For Kids Baby Boys And...
+                </p>
+                <div class="flex items-center gap-2 mt-1">
+                 <span class="text-orange-500 font-semibold text-lg">
+                  Rs.359
+                 </span>
+                 <span class="text-gray-500 text-xs">
+                  -5%
+                 </span>
+                </div>
+                <div class="flex items-center gap-1 mt-1 text-yellow-400 text-xs">
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star-half-alt star-yellow">
+                 </i>
+                 <span class="text-gray-400 text-xs">
+                  (1330)
+                 </span>
+                </div>
+               </div>
+              </div>
+              <!-- Card 6 -->
+              <div class="bg-white w-48 flex-shrink-0">
+               <img alt="Premium NICE 400ml Glass Water Bottle blue and pink held in hands" class="w-full" height="240" src="https://storage.googleapis.com/a1aa/image/0a09a95d-1d0b-4762-3285-6a2a1170de8c.jpg" width="240"/>
+               <div class="p-2">
+                <p class="text-sm leading-tight">
+                 Premium NICE 400ml Glass Water Bottle -...
+                </p>
+                <div class="flex items-center gap-2 mt-1">
+                 <span class="text-orange-500 font-semibold text-lg">
+                  Rs.499
+                 </span>
+                </div>
+                <div class="flex items-center gap-1 mt-1 text-yellow-400 text-xs">
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star star-yellow">
+                 </i>
+                 <i class="fas fa-star-half-alt star-yellow">
+                 </i>
+                 <span class="text-gray-400 text-xs">
+                  (143)
+                 </span>
+                </div>
+               </div>
+              </div>
+             </div>
+                 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+                 <style>
+                  /* Custom star rating style to match the screenshot */
+                   .star-rating {
+                     color: #f59e0b; /* Tailwind amber-500 */
+                     font-size: 0.875rem; /* text-sm */
+                     line-height: 1.25rem; /* leading-5 */
+                   }
+                 </style>
+                </head>
+                <body class="bg-white p-2">
+                 <div class="flex space-x-2 overflow-x-auto scrollbar-hide">
+                  <!-- Product 1 -->
+                  <div class="flex-shrink-0 w-40">
+                   <img alt="Transparent Lightweight Anti Glare UV Eyeglasses held in hand with beige sweater and white book background" class="w-full object-cover" height="160" src="https://storage.googleapis.com/a1aa/image/ec46b5a9-d5ae-4f74-8e7e-3cb30f5f7fcb.jpg" width="160"/>
+                   <div class="mt-1 text-[14px] font-normal leading-5 text-black">
+                    Transparent Lightweight Anti Glare UV Eyeglasses...
+                   </div>
+                   <div class="flex items-center space-x-1 mt-1">
+                    <span class="text-orange-500 font-semibold text-[16px] leading-5">
+                     Rs.199
+                    </span>
+                    <span class="text-[14px] text-gray-600 font-normal">
+                     -75%
+                    </span>
+                   </div>
+                   <div class="star-rating flex items-center space-x-1 mt-1 select-none">
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star-half-alt">
+                    </i>
+                    <span class="text-gray-400">
+                     (479)
+                    </span>
+                   </div>
+                  </div>
+                  <!-- Product 2 -->
+                  <div class="flex-shrink-0 w-40">
+                   <img alt="Hand holding Sauvage Impression Perfume 100ml bottle with black boxes in background" class="w-full object-cover" height="160" src="https://storage.googleapis.com/a1aa/image/2f9eccf7-b8dd-4f97-948c-0d96fd347bfc.jpg" width="160"/>
+                   <div class="mt-1 text-[14px] font-normal leading-5 text-black">
+                    SAUVAGE IMPRESSION Perfume 100ml - Best For...
+                   </div>
+                   <div class="flex items-center space-x-1 mt-1">
+                    <span class="text-orange-500 font-semibold text-[16px] leading-5">
+                     Rs.857
+                    </span>
+                    <span class="text-[14px] text-gray-600 font-normal">
+                     -66%
+                    </span>
+                   </div>
+                   <div class="star-rating flex items-center space-x-1 mt-1 select-none">
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star-half-alt">
+                    </i>
+                    <i class="far fa-star">
+                    </i>
+                    <span class="text-gray-400">
+                     (364)
+                    </span>
+                   </div>
+                  </div>
+                  <!-- Product 3 -->
+                  <div class="flex-shrink-0 w-40">
+                   <img alt="Three pairs of slippers for men in black, grey and blue on wooden surface" class="w-full object-cover" height="160" src="https://storage.googleapis.com/a1aa/image/408de816-1c5a-4b89-581c-23311903515d.jpg" width="160"/>
+                   <div class="mt-1 text-[14px] font-normal leading-5 text-black">
+                    slippers for men-House slippers - Chapal for men
+                   </div>
+                   <div class="flex items-center space-x-1 mt-1">
+                    <span class="text-orange-500 font-semibold text-[16px] leading-5">
+                     Rs.499
+                    </span>
+                    <span class="text-[14px] text-gray-600 font-normal">
+                     -50%
+                    </span>
+                   </div>
+                   <div class="star-rating flex items-center space-x-1 mt-1 select-none">
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="far fa-star">
+                    </i>
+                    <span class="text-gray-400">
+                     (120)
+                    </span>
+                   </div>
+                  </div>
+                  <!-- Product 4 -->
+                  <div class="flex-shrink-0 w-40">
+                   <img alt="Wireless Bluetooth 5.2 Neckband Earphones on blue circular mat with battery life info" class="w-full object-cover" height="160" src="https://storage.googleapis.com/a1aa/image/79c8e803-00a7-4908-381b-17d171feb950.jpg" width="160"/>
+                   <div class="mt-1 text-[14px] font-normal leading-5 text-black">
+                    Wireless Bluetooth 5.2 Neckband Earphones...
+                   </div>
+                   <div class="flex items-center space-x-1 mt-1">
+                    <span class="text-orange-500 font-semibold text-[16px] leading-5">
+                     Rs.440
+                    </span>
+                    <span class="text-[14px] text-gray-600 font-normal">
+                     -71%
+                    </span>
+                   </div>
+                   <div class="star-rating flex items-center space-x-1 mt-1 select-none">
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star-half-alt">
+                    </i>
+                    <span class="text-gray-400">
+                     (493)
+                    </span>
+                   </div>
+                  </div>
+                  <!-- Product 5 -->
+                  <div class="flex-shrink-0 w-40">
+                   <img alt="Original Transparent Square Frame Glasses held in hand with white case and beige sweater background" class="w-full object-cover" height="160" src="https://storage.googleapis.com/a1aa/image/7d7aff93-2e21-451c-b156-2b8c053628ea.jpg" width="160"/>
+                   <div class="mt-1 text-[14px] font-normal leading-5 text-black">
+                    Original Transparent Square Frame Glasses fo...
+                   </div>
+                   <div class="flex items-center space-x-1 mt-1">
+                    <span class="text-orange-500 font-semibold text-[16px] leading-5">
+                     Rs.201
+                    </span>
+                    <span class="text-[14px] text-gray-600 font-normal">
+                     -77%
+                    </span>
+                   </div>
+                   <div class="star-rating flex items-center space-x-1 mt-1 select-none">
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star-half-alt">
+                    </i>
+                    <span class="text-gray-400">
+                     (1045)
+                    </span>
+                   </div>
+                  </div>
+                  <!-- Product 6 -->
+                  <div class="flex-shrink-0 w-40">
+                   <img alt="Premium Quality pocket friendly Slim and Smart Wallet with cards and currency notes" class="w-full object-cover" height="160" src="https://storage.googleapis.com/a1aa/image/127a2c62-fcff-4507-96fb-9ba668cafcdb.jpg" width="160"/>
+                   <div class="mt-1 text-[14px] font-normal leading-5 text-black">
+                    Premium Quality pocket friendly Slim and Smart ...
+                   </div>
+                   <div class="flex items-center space-x-1 mt-1">
+                    <span class="text-orange-500 font-semibold text-[16px] leading-5">
+                     Rs.280
+                    </span>
+                    <span class="text-[14px] text-gray-600 font-normal">
+                     -49%
+                    </span>
+                   </div>
+                   <div class="star-rating flex items-center space-x-1 mt-1 select-none">
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star-half-alt">
+                    </i>
+                    <span class="text-gray-400">
+                     (1582)
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+                    </head>
+                    <body class="bg-white p-6">
+                     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+                      <!-- Card 1 -->
+                      <div class="bg-white shadow-md p-4">
+                       <img alt="Rose gold iPhone 6 showing front screen with orange fish wallpaper and back with Apple logo" class="w-full object-contain" height="200" src="https://storage.googleapis.com/a1aa/image/3569b025-f2a3-46ef-2c28-42a6e21c15b7.jpg" width="300"/>
+                       <h3 class="mt-3 text-base font-normal text-black leading-snug">
+                        Iphone 6 Non pta Good Condition with Free...
+                       </h3>
+                       <div class="mt-1 flex items-center space-x-2">
+                        <span class="text-orange-600 font-semibold text-lg">
+                         Rs.6,750
+                        </span>
+                        <span class="text-gray-500 text-sm">
+                         -26%
+                        </span>
+                       </div>
+                       <div class="mt-1 flex items-center space-x-1 text-orange-400 text-sm">
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star-half-alt">
+                        </i>
+                        <span class="text-gray-400 text-xs">
+                         (99)
+                        </span>
+                       </div>
+                      </div>
+                      <!-- Card 2 -->
+                      <div class="bg-white shadow-md p-4">
+                       <img alt="Metal toy gun with silver and black finish and brown grip, with two packets of silver and gold toy bullets" class="w-full object-contain" height="200" src="https://storage.googleapis.com/a1aa/image/e5e53057-7fda-4e4c-f2ba-af3cd6a7cd81.jpg" width="300"/>
+                       <h3 class="mt-3 text-base font-normal text-black leading-snug">
+                        Metal Toy for Kids - Best Toy for Play and Gift -...
+                       </h3>
+                       <div class="mt-1 flex items-center space-x-2">
+                        <span class="text-orange-600 font-semibold text-lg">
+                         Rs.1,680
+                        </span>
+                        <span class="text-gray-500 text-sm">
+                         -58%
+                        </span>
+                       </div>
+                       <div class="mt-1 flex items-center space-x-1 text-orange-400 text-sm">
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star-half-alt">
+                        </i>
+                        <span class="text-gray-400 text-xs">
+                         (14)
+                        </span>
+                       </div>
+                      </div>
+                      <!-- Card 3 -->
+                      <div class="bg-white shadow-md p-4">
+                       <img alt="Pink portable cosmetic makeup pouch with transparent sides showing makeup items inside" class="w-full object-contain" height="200" src="https://storage.googleapis.com/a1aa/image/3e368d62-b57f-48f8-56ea-c7b0a42a474c.jpg" width="300"/>
+                       <h3 class="mt-3 text-base font-normal text-black leading-snug">
+                        New Cosmetic pink Portable Makeup Pouch...
+                       </h3>
+                       <div class="mt-1 flex items-center space-x-2">
+                        <span class="text-orange-600 font-semibold text-lg">
+                         Rs.134
+                        </span>
+                        <span class="text-gray-500 text-sm">
+                         -4%
+                        </span>
+                       </div>
+                       <div class="mt-1 flex items-center space-x-1 text-orange-400 text-sm">
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star">
+                        </i>
+                        <i class="fas fa-star-half-alt">
+                        </i>
+                        <span class="text-gray-400 text-xs">
+                         (191)
+                        </span>
+                       </div>
+                      </div>
+                    </div>
+                         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+                         <style>
+                          @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+                           body {
+                             font-family: "Poppins", sans-serif;
+                           }
+                         </style>
+                        </head>
+                        <body class="bg-[#f7f7f7]">
+                         <div class="max-w-5xl mx-auto px-4 pt-10">
+                          <button class="w-full max-w-md mx-auto block border border-[#1d9dbf] text-[#1d9dbf] text-center py-3 font-normal text-lg">
+                           LOAD MORE
+                          </button>
+                         </div>
+                         <div class="max-w-5xl mx-auto px-4 pt-10 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-[#0a0a5a]">
+                          <div>
+                           <h3 class="text-lg font-semibold mb-3">
+                            Customer Care
+                           </h3>
+                           <ul class="space-y-1 text-sm font-normal">
+                            <li>
+                             Help Center
+                            </li>
+                            <li>
+                             How to Buy
+                            </li>
+                            <li>
+                             Corporate &amp; Bulk Purchasing
+                            </li>
+                            <li>
+                             Returns &amp; Refunds
+                            </li>
+                            <li>
+                             Daraz Shop
+                            </li>
+                            <li>
+                             Contact Us
+                            </li>
+                            <li>
+                             Purchase Protection
+                            </li>
+                            <li>
+                             Daraz Pick up Points
+                            </li>
+                           </ul>
+                          </div>
+                          <div>
+                           <h3 class="text-lg font-semibold mb-3">
+                            Daraz
+                           </h3>
+                           <ul class="space-y-1 text-sm font-normal">
+                            <li>
+                             About Us
+                            </li>
+                            <li>
+                             Digital Payments
+                            </li>
+                            <li>
+                             Daraz Donates
+                            </li>
+                            <li>
+                             Daraz Blog
+                            </li>
+                            <li>
+                             Terms &amp; Conditions
+                            </li>
+                            <li>
+                             Privacy Policy
+                            </li>
+                            <li>
+                             NTN Number : 4012118-6
+                            </li>
+                            <li>
+                             STRN Number : 1700401211818
+                            </li>
+                            <li>
+                             Online Shopping App
+                            </li>
+                            <li>
+                             Online Grocery Shopping
+                            </li>
+                            <li>
+                             Daraz Exclusive
+                            </li>
+                            <li>
+                             Daraz University
+                            </li>
+                            <li>
+                             Sell on Daraz
+                            </li>
+                           </ul>
+                          </div>
+                          <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-6 md:flex-col md:items-start md:space-x-0 md:space-y-6">
+                           <div class="flex items-center space-x-3 bg-[#c9ffff] rounded-lg px-3 py-2 mb-4 sm:mb-0 md:mb-4">
+                            <img alt="Daraz orange logo icon on light blue rounded square background" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/05b8d24e-6d07-41e7-6fd3-1f6fe747e700.jpg" width="40"/>
+                            <div>
+                             <p class="text-[#f4793e] text-lg font-normal leading-none">
+                              Happy Shopping
+                             </p>
+                             <p class="text-[#0a0a5a] text-sm font-normal leading-none">
+                              Download App
+                             </p>
+                            </div>
+                           </div>
+                           <div class="flex flex-wrap gap-3">
+                            <img alt="Available on the App Store black button with white text and phone icon" class="w-[120px] h-[40px]" height="40" src="https://storage.googleapis.com/a1aa/image/e2bde526-5b5b-4ee7-600e-6348bbc93444.jpg" width="120"/>
+                            <img alt="Android app on Google Play black button with white text and play icon" class="w-[120px] h-[40px]" height="40" src="https://storage.googleapis.com/a1aa/image/86c80f2d-c80d-40ef-1292-767f5f25c952.jpg" width="120"/>
+                            <img alt="Explore it on Huawei AppGallery black button with white text and red logo" class="w-[120px] h-[40px]" height="40" src="https://storage.googleapis.com/a1aa/image/03f7687e-6b00-420c-9298-b3ff90c5c59d.jpg" width="120"/>
+                           </div>
+                          </div>
+                         </div>
+                             <link href="https://fonts.googleapis.com/css2?family=Inter&amp;display=swap" rel="stylesheet"/>
+                             <style>
+                              body {
+                                 font-family: "Inter", sans-serif;
+                               }
+                             </style>
+                            </head>
+                            <body class="bg-white p-6">
+                             <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                              <div class="flex flex-col">
+                               <h2 class="text-[#0B3C5D] text-lg font-normal mb-3">
+                                Payment Methods
+                               </h2>
+                               <div class="flex flex-wrap gap-2 max-w-xs">
+                                <img alt="Cash on Delivery logo with dark teal text on white background" class="h-10 w-auto border border-gray-300 rounded" height="40" src="https://storage.googleapis.com/a1aa/image/e3a4f5b6-d96c-428e-2037-bd5318fa3227.jpg" width="70"/>
+                                <img alt="Visa logo in dark teal on white background" class="h-10 w-auto" height="40" src="https://storage.googleapis.com/a1aa/image/5ed86b4f-75b7-4ec2-22c4-7e9be06a437e.jpg" width="70"/>
+                                <img alt="Mastercard logo with red and orange circles on white background" class="h-10 w-auto rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/1c51f669-339d-46ea-d44e-9089fabc667b.jpg" width="70"/>
+                                <img alt="Easypaisa logo in dark teal on white background" class="h-10 w-auto rounded-full" height="40" src="data:image/png;base64,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" width="70"/>
+                                <img alt="Daraz Wallet logo in orange on white background" class="h-10 w-auto rounded" height="40" src="https://storage.googleapis.com/a1aa/image/46083b74-062b-4682-bac8-d33025e7bd4a.jpg" width="70"/>
+                                <img alt="JazzCash logo in orange and yellow on white background" class="h-10 w-auto rounded" height="40" src="https://seeklogo.com/images/J/jazz-cash-logo-829841352F-seeklogo.com.png" width="70"/>
+                                <img alt="UnionPay logo in red and blue on white background" class="h-10 w-auto rounded" height="40" src="https://storage.googleapis.com/a1aa/image/20a5a357-fc5a-4d6a-88b9-a0991b7d8619.jpg" width="70"/>
+                                <img alt="HBL Habib Bank logo in dark teal on white background" class="h-10 w-auto rounded" height="40" src="https://storage.googleapis.com/a1aa/image/3a7c6fde-111c-473f-f9d8-e4c1e671c67c.jpg" width="70"/>
+                                <img alt="Easy Monthly Installments logo in purple on white background" class="h-10 w-auto rounded" height="40" src="https://storage.googleapis.com/a1aa/image/1a944a18-a392-4db9-54b6-d7523cf6f678.jpg" width="70"/>
+                               </div>
+                              </div>
+                              <div class="flex flex-col">
+                               <h2 class="text-[#0B3C5D] text-lg font-normal mb-3">
+                                Verified by
+                               </h2>
+                               <img alt="PCI DSS Compliant logo in dark teal on white background" class="h-10 w-auto" height="40" src="https://storage.googleapis.com/a1aa/image/86847e03-7dd8-45ae-8873-b3954d979659.jpg" width="120"/>
+                              </div>
+                             </div>
+                                  <link
+                                    rel="stylesheet"
+                                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                                  />
+                                  <style>
+                                    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+                                    body {
+                                      font-family: 'Inter', sans-serif;
+                                    }
+                                  </style>
+                                </head>
+                                <body class="bg-white">
+                                  <footer class="w-full px-4 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-600 text-sm">
+                                    <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-6">
+                                      <span class="font-normal text-base text-black mb-2 sm:mb-0">Daraz International</span>
+                                      <ul class="flex space-x-4 text-gray-500 text-sm font-normal">
+                                        <li class="flex items-center space-x-1">
+                                          <span class="text-white bg-green-800 rounded-full w-6 h-6 flex items-center justify-center text-lg leading-none">☪</span>
+                                        </br>
+                                          <span>Pakistan</span>
+                                        </li>
+                                        <li class="flex items-center space-x-1">
+                                          <span class="text-white bg-red-700 rounded-full w-6 h-6 flex items-center justify-center text-lg leading-none">●</span>
+                                          <span>Bangladesh</span>
+                                        </li>
+                                        <li class="flex items-center space-x-1">
+                                          <span class="text-yellow-600 bg-red-900 rounded-full w-6 h-6 flex items-center justify-center text-lg leading-none">🦁</span>
+                                          <span>Sri Lanka</span>
+                                        </li>
+                                        <li class="flex items-center space-x-1">
+                                          <span class="text-white bg-green-600 rounded-full w-6 h-6 flex items-center justify-center text-lg leading-none">★</span>
+                                          <span>Myanmar</span>
+                                        </li>
+                                        <li class="flex items-center space-x-1">
+                                          <span class="text-white bg-red-900 rounded-r-full rounded-l-[6px] w-6 h-6 flex items-center justify-center text-lg leading-none">🇳🇵</span>
+                                          <span>Nepal</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    <div class="flex items-center space-x-6 mt-4 sm:mt-0">
+                                      <div class="flex flex-col text-gray-700 text-sm font-normal">
+                                        <span>Follow Us</span>
+                                      </div>
+                                      <div class="flex space-x-4 text-2xl text-blue-600">
+                                        <a href="#" aria-label="Facebook" class="text-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" aria-label="Twitter" class="text-[#1DA1F2]"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" aria-label="Instagram" class="text-gradient bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 inline-block rounded"><i class="fab fa-instagram p-[2px]"></i></a>
+                                        <a href="#" aria-label="YouTube" class="text-[#FF0000]"><i class="fab fa-youtube"></i></a>
+                                        <a href="#" aria-label="Website" class="text-[#FF6600]"><i class="fas fa-globe"></i></a>
+                                      </div>
+                                    </div>
+                                    <div class="text-gray-500 text-sm font-normal mt-4 sm:mt-0 sm:ml-auto">© Daraz 2025</div>
+                                  </footer>
+                                     
+                                    
+                              
+                      
+              
+       
+   
+
+ </body>
+</html>
+
+
